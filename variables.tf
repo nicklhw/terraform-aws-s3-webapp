@@ -10,3 +10,7 @@ variable "name" {
   type    = string
   default = "nwong"
 }
+
+variable "mal_code" {
+  type = string
+}
