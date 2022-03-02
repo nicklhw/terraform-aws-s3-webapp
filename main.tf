@@ -9,10 +9,15 @@ terraform {
 
 provider "aws" {
   region = var.region
+
+  assume_role {
+    role_arn     = var.aws_dev_role_arn
+    session_name = "terraform"
+  }
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${var.prefix}-${var.name}"
+  bucket = "${var.prefix}-${var.name}-terramino"
   acl    = "public-read"
 
   policy = <<EOF
