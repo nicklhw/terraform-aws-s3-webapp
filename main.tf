@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${var.prefix}-${var.name}-terramino"
+  bucket = "${var.prefix}-terramino"
   acl    = "public-read"
 
   policy = <<EOF
@@ -32,7 +32,7 @@ resource "aws_s3_bucket" "bucket" {
                 "s3:GetObject"
             ],
             "Resource": [
-                "arn:aws:s3:::${var.prefix}-${var.name}/*"
+                "arn:aws:s3:::${var.prefix}-terramino/*"
             ]
         }
     ]

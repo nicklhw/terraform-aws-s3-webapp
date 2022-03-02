@@ -5,11 +5,6 @@ variable "region" {
 
 variable "prefix" {
   type    = string
-  default = "dev"
-}
-
-variable "name" {
-  type    = string
   default = "nwong"
 }
 
